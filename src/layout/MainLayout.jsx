@@ -12,10 +12,6 @@ const MainLayout = () => {
         <AppBar position="static">
           <Toolbar>
             <NavLink>LICENSE PLATE RECOGNITION</NavLink>
-            <Box sx={{ flexGrow: 1 }} />
-            <NavLink to="/result" className="nav-link">
-              result
-            </NavLink>
           </Toolbar>
         </AppBar>
         {isFetching && (

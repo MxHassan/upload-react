@@ -193,7 +193,7 @@ const UploadPage = () => {
       {file ? (
         <Grid container component="main">
           <CssBaseline />
-          <Grid item sm={12} md={7} component={Box}>
+          <Grid item xs={12} md={7} component={Box}>
             <UploadFlexBox>
               <UploadCancelButton disableRipple onClick={() => setFile(null)}>
                 <Cancel />
@@ -203,7 +203,7 @@ const UploadPage = () => {
               </ImgPreviewBox>
             </UploadFlexBox>
           </Grid>
-          <Grid item sm={12} md={5}>
+          <Grid item xs={12} md={5}>
             <UploadPageContent />
           </Grid>
         </Grid>
