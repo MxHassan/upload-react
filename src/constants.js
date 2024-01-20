@@ -1,3 +1,3 @@
 module.exports = {
-  BASE_URL: "http://localhost:9100",
+  BASE_URL: "https://lpr.royal-defense.cloud/",
 };

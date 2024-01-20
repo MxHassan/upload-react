@@ -1,8 +1,14 @@
-import { AppBar, Box, LinearProgress, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  LinearProgress,
+  Toolbar,
+} from "@mui/material";
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import { UploadContext } from "../context/UploadContext";
-import { NavLink } from "../components/CustomComponents";
+import { Logo, NavLink } from "../components/CustomComponents";
 
 const MainLayout = () => {
   const { isFetching } = useContext(UploadContext);
@@ -11,7 +17,12 @@ const MainLayout = () => {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <NavLink>LICENSE PLATE RECOGNITION</NavLink>
+            <NavLink to="/">
+              <IconButton sx={{ py: "0px" }} disableRipple>
+                <Logo variant="square" src="logo-nobg.png" />
+              </IconButton>
+              Royal Defense LPR
+            </NavLink>
           </Toolbar>
         </AppBar>
         {isFetching && (
