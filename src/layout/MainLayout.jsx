@@ -1,8 +1,9 @@
 import {
   AppBar,
+  Backdrop,
   Box,
+  CircularProgress,
   IconButton,
-  LinearProgress,
   Toolbar,
   useTheme,
 } from "@mui/material";
@@ -28,9 +29,12 @@ const MainLayout = () => {
           </Toolbar>
         </AppBar>
         {isFetching && (
-          <Box sx={{ width: "100%" }}>
-            <LinearProgress sx={{ height: "8px" }} />
-          </Box>
+          <Backdrop
+            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={isFetching}
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
         )}
       </Box>
       <Outlet />

@@ -56,7 +56,6 @@ const UploadPageContent = () => {
       dispatch({ type: "UPLOAD_START" });
       try {
         const res = await axios.post(`${BASE_URL}/api/v1/lpr`, formData);
-        console.log(res.data);
         if (res.data.success) {
           let data = {
             fullImg: res.data.full_image,

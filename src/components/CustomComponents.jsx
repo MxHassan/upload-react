@@ -20,3 +20,10 @@ export const Logo = styled(Avatar)(({ theme }) => ({
   width: "auto",
   height: "50px",
 }));
+export const FullImgBox = styled(Box)(({ theme }) => ({
+  marginTop: 80,
+  width: "70%",
+  [theme.breakpoints.down("md")]: {
+    margin: "80px auto 0px",
+  },
+}));

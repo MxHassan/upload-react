@@ -10,7 +10,7 @@ import { FileContext } from "../../context/FileContext";
 const UploadFlexBox = styled(FlexBox)(({ theme }) => ({
   flexDirection: "column",
   padding: "0 8px",
-  marginTop: "40px",
+  margin: "90px auto 0px",
   position: "relative",
 }));
 
@@ -21,6 +21,9 @@ const UploadCancelButton = styled(IconButton)(({ theme }) => ({
   position: "absolute",
 }));
 const ImgPreviewBox = styled(Box)(({ theme }) => ({
+  alignItems: "center",
+  justifyContent: "center",
+  display: "flex",
   [theme.breakpoints.down("md")]: {
     maxWidth: "600px",
   },
@@ -28,7 +31,6 @@ const ImgPreviewBox = styled(Box)(({ theme }) => ({
 
 const UploadPage = () => {
   const { data, dispatch: fileDispatch } = useContext(FileContext);
-
   return (
     <>
       {data ? (
