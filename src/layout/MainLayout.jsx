@@ -4,6 +4,7 @@ import {
   IconButton,
   LinearProgress,
   Toolbar,
+  useTheme,
 } from "@mui/material";
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
@@ -11,11 +12,12 @@ import { UploadContext } from "../context/UploadContext";
 import { Logo, NavLink } from "../components/CustomComponents";
 
 const MainLayout = () => {
+  const theme = useTheme();
   const { isFetching } = useContext(UploadContext);
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1 }}>
           <Toolbar>
             <NavLink to="/">
               <IconButton sx={{ py: "0px" }} disableRipple>

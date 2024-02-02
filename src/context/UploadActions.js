@@ -1,10 +1,10 @@
-export const LoginStart = () => ({
+export const UploadStart = () => ({
   type: "UPLOAD_START",
 });
-export const LoginSucess = (data) => ({
+export const UploadSuccess = (data) => ({
   type: "UPLOAD_SUCCESS",
   payload: data,
 });
-export const LoginFailure = () => ({
+export const UploadFailure = () => ({
   type: "UPLOAD_FAILURE",
 });

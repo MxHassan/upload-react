@@ -7,7 +7,7 @@ export const FlexBox = styled(Box)(({ theme }) => ({
   justifyContent: "center",
 }));
 export const CarImg = styled("img")(({ theme }) => ({
-  width: "100%",
+  width: "90%",
   objectFit: "contain",
   maxHeight: "60vh",
 }));
