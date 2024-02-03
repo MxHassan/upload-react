@@ -19,6 +19,9 @@ const PlateBox = styled(Box)(({ theme }) => ({
 const PlateImgsCard = () => {
   const { data } = useContext(UploadContext);
   const { plateImgs } = data;
+  if (plateImgs.length === 0) {
+    return <Typography variant="h4">Sorry, No license plate found</Typography>;
+  }
   return (
     <>
       {plateImgs.map((plateImg, index) => (

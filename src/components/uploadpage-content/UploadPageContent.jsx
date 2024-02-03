@@ -62,6 +62,7 @@ const UploadPageContent = () => {
             plateImgs: res.data.data,
           };
           dispatch({ type: "UPLOAD_SUCCESS", payload: data });
+          fileDispatch({ type: "FILESAVE_REMOVE" });
           navigate("/result");
         } else if (res.data.status === 400) {
           toast.error("No plate found");

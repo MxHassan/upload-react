@@ -7,14 +7,20 @@ import {
   Toolbar,
   useTheme,
 } from "@mui/material";
-import { useContext } from "react";
-import { Outlet } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import { UploadContext } from "../context/UploadContext";
 import { Logo, NavLink } from "../components/CustomComponents";
 
 const MainLayout = () => {
   const theme = useTheme();
   const { isFetching } = useContext(UploadContext);
+  const { pathname } = useLocation();
+  const [matchResult, setMatchresult] = useState(null);
+  useEffect(() => {
+    if (pathname === "/result") setMatchresult(true);
+    else setMatchresult(false);
+  }, [pathname]);
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -26,6 +32,12 @@ const MainLayout = () => {
               </IconButton>
               Royal Defense LPR
             </NavLink>
+            {matchResult && (
+              <>
+                <Box sx={{ flexGrow: 1 }} />
+                <NavLink to="/">Go Home</NavLink>
+              </>
+            )}
           </Toolbar>
         </AppBar>
         {isFetching && (

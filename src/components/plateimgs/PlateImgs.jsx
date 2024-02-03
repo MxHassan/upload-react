@@ -1,6 +1,7 @@
-import { Box, Drawer, Toolbar, useMediaQuery, useTheme } from "@mui/material";
+import { Drawer, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 
 import PlateImgsCard from "./PlateImgsCard";
+import { FlexBox } from "../CustomComponents";
 
 const drawerWidth = "30%";
 
@@ -24,9 +25,11 @@ const PlateImgs = () => {
           }}
         >
           <Toolbar />
-          <Box>
+          <FlexBox
+            sx={{ flexGrow: 1, textAlign: "center", flexDirection: "column" }}
+          >
             <PlateImgsCard />
-          </Box>
+          </FlexBox>
         </Drawer>
       ) : (
         <>
